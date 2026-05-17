@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>akhiLow 3D World Assets</title>
+  <style>
+    :root {
+      --bg: #101014;
+      --card: #1a1a21;
+      --card-light: #23232c;
+      --text: #f4f1ea;
+      --muted: #b7b0a3;
+      --accent: #d69a4b;
+      --accent-dark: #a86f2e;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(214, 154, 75, 0.12), transparent 32rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 56px 0 36px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-title {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    .site-subtitle {
+      margin: 14px 0 28px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .header-buttons,
+    .card-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--card-light);
+      color: var(--text);
+      font-weight: 700;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #19120a;
+      border-color: transparent;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .button.primary:hover {
+      background: #e3aa5a;
+    }
+
+    main {
+      padding: 40px 0 64px;
+    }
+
+    .section-title {
+      margin: 0 0 20px;
+      font-size: 1.6rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: linear-gradient(180deg, var(--card-light), var(--card));
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+      transition: transform 0.18s ease, border-color 0.18s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(214, 154, 75, 0.45);
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+      background: #2a2a33;
+    }
+
+    .placeholder {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background:
+        linear-gradient(135deg, rgba(214, 154, 75, 0.16), transparent),
+        #25252e;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .product-body {
+      padding: 22px;
+    }
+
+    .product-title {
+      margin: 0 0 8px;
+      font-size: 1.3rem;
+    }
+
+    .product-desc {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .price {
+      margin: 0 0 18px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .about {
+      margin-top: 48px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .about h2 {
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+    }
+
+    .about p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 28px 0;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 720px) {
+      header {
+        padding-top: 40px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="site-title">akhiLow 3D World Assets</h1>
+      <p class="site-subtitle">VRChat / Unity向け3D空間素材</p>
+      <div class="header-buttons">
+        <a class="button primary" href="https://akhilow.booth.pm/" target="_blank" rel="noopener noreferrer">Boothを見る</a>
+        <a class="button" href="https://vrchat.com/home/user/" target="_blank" rel="noopener noreferrer">VRChatを見る</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2 class="section-title">Products</h2>
+
+      <section class="product-grid" aria-label="商品一覧">
+        <article class="product-card">
+          <img class="product-image" src="images/classroom.jpg" alt="教室パックのスクリーンショット" />
+          <div class="product-body">
+            <h3 class="product-title">教室パック</h3>
+            <p class="product-desc">学校・教室向けの3D空間素材</p>
+            <p class="price">価格：〇〇円</p>
+            <div class="card-buttons">
+              <a class="button primary" href="#" target="_blank" rel="noopener noreferrer">商品ページを見る</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img class="product-image" src="images/cozy-cafe.jpg" alt="Cozy Cafeのスクリーンショット" />
+          <div class="product-body">
+            <h3 class="product-title">夜更けの喫茶店 - Cozy Cafe -</h3>
+            <p class="product-desc">夜の喫茶店ワールド素材</p>
+            <p class="price">価格：〇〇円</p>
+            <div class="card-buttons">
+              <a class="button primary" href="https://akhilow.booth.pm/items/7587358" target="_blank" rel="noopener noreferrer">商品ページを見る</a>
+              <a class="button" href="https://vrch.at/zqar9sdk" target="_blank" rel="noopener noreferrer">VRChatで見る</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="placeholder">Coming Soon</div>
+          <div class="product-body">
+            <h3 class="product-title">次回作</h3>
+            <p class="product-desc">制作予定の3D空間素材</p>
+            <p class="price">Coming Soon</p>
+            <div class="card-buttons">
+              <a class="button" href="#">詳細</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="placeholder">In Progress</div>
+          <div class="product-body">
+            <h3 class="product-title">制作中</h3>
+            <p class="product-desc">現在制作中のワールド・背景素材</p>
+            <p class="price">Coming Soon</p>
+            <div class="card-buttons">
+              <a class="button" href="#">詳細</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="about">
+        <h2>About</h2>
+        <p>Blender / Unityで制作した3Dワールド・背景素材です。VRChatやUnityプロジェクトで使いやすい空間素材を制作しています。</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">© akhiLow</div>
+  </footer>
+</body>
+</html>
