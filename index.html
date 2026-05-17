@@ -12,13 +12,10 @@
       --text: #f4f1ea;
       --muted: #b7b0a3;
       --accent: #d69a4b;
-      --accent-dark: #a86f2e;
       --border: rgba(255, 255, 255, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -30,10 +27,7 @@
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .container {
       width: min(1080px, calc(100% - 32px));
@@ -90,13 +84,7 @@
       border-color: rgba(255, 255, 255, 0.22);
     }
 
-    .button.primary:hover {
-      background: #e3aa5a;
-    }
-
-    main {
-      padding: 40px 0 64px;
-    }
+    main { padding: 40px 0 64px; }
 
     .section-title {
       margin: 0 0 20px;
@@ -131,22 +119,7 @@
       background: #2a2a33;
     }
 
-    .placeholder {
-      display: grid;
-      place-items: center;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background:
-        linear-gradient(135deg, rgba(214, 154, 75, 0.16), transparent),
-        #25252e;
-      color: var(--muted);
-      font-weight: 700;
-      letter-spacing: 0.04em;
-    }
-
-    .product-body {
-      padding: 22px;
-    }
+    .product-body { padding: 22px; }
 
     .product-title {
       margin: 0 0 8px;
@@ -172,15 +145,8 @@
       background: rgba(255, 255, 255, 0.035);
     }
 
-    .about h2 {
-      margin: 0 0 10px;
-      font-size: 1.4rem;
-    }
-
-    .about p {
-      margin: 0;
-      color: var(--muted);
-    }
+    .about h2 { margin: 0 0 10px; font-size: 1.4rem; }
+    .about p { margin: 0; color: var(--muted); }
 
     footer {
       padding: 28px 0;
@@ -190,17 +156,9 @@
     }
 
     @media (max-width: 720px) {
-      header {
-        padding-top: 40px;
-      }
-
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .button {
-        width: 100%;
-      }
+      header { padding-top: 40px; }
+      .product-grid { grid-template-columns: 1fr; }
+      .button { width: 100%; }
     }
   </style>
 </head>
@@ -219,57 +177,7 @@
   <main>
     <div class="container">
       <h2 class="section-title">Products</h2>
-
-      <section class="product-grid" aria-label="商品一覧">
-        <article class="product-card">
-          <img class="product-image" src="images/classroom.jpg" alt="教室パックのスクリーンショット" />
-          <div class="product-body">
-            <h3 class="product-title">教室パック</h3>
-            <p class="product-desc">学校・教室向けの3D空間素材</p>
-            <p class="price">価格：〇〇円</p>
-            <div class="card-buttons">
-              <a class="button primary" href="#" target="_blank" rel="noopener noreferrer">商品ページを見る</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <img class="product-image" src="images/cozy-cafe.jpg" alt="Cozy Cafeのスクリーンショット" />
-          <div class="product-body">
-            <h3 class="product-title">夜更けの喫茶店 - Cozy Cafe -</h3>
-            <p class="product-desc">夜の喫茶店ワールド素材</p>
-            <p class="price">価格：〇〇円</p>
-            <div class="card-buttons">
-              <a class="button primary" href="https://akhilow.booth.pm/items/7587358" target="_blank" rel="noopener noreferrer">商品ページを見る</a>
-              <a class="button" href="https://vrch.at/zqar9sdk" target="_blank" rel="noopener noreferrer">VRChatで見る</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="placeholder">Coming Soon</div>
-          <div class="product-body">
-            <h3 class="product-title">次回作</h3>
-            <p class="product-desc">制作予定の3D空間素材</p>
-            <p class="price">Coming Soon</p>
-            <div class="card-buttons">
-              <a class="button" href="#">詳細</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="placeholder">In Progress</div>
-          <div class="product-body">
-            <h3 class="product-title">制作中</h3>
-            <p class="product-desc">現在制作中のワールド・背景素材</p>
-            <p class="price">Coming Soon</p>
-            <div class="card-buttons">
-              <a class="button" href="#">詳細</a>
-            </div>
-          </div>
-        </article>
-      </section>
+      <section id="productGrid" class="product-grid" aria-label="商品一覧"></section>
 
       <section class="about">
         <h2>About</h2>
@@ -281,5 +189,85 @@
   <footer>
     <div class="container">© akhiLow</div>
   </footer>
+
+  <script>
+    // ここに商品を追加するだけで、自動でカードが増えます。
+    const products = [
+      {
+        title: "教室パック",
+        description: "学校・教室向けの3D空間素材",
+        price: "〇〇円",
+        image: "images/classroom.jpg",
+        imageAlt: "教室パックのスクリーンショット",
+        boothUrl: "#",
+        vrchatUrl: ""
+      },
+      {
+        title: "夜更けの喫茶店 - Cozy Cafe -",
+        description: "夜の喫茶店ワールド素材",
+        price: "〇〇円",
+        image: "images/cozy-cafe.jpg",
+        imageAlt: "Cozy Cafeのスクリーンショット",
+        boothUrl: "https://akhilow.booth.pm/items/7587358",
+        vrchatUrl: "https://vrch.at/zqar9sdk"
+      },
+      {
+        title: "次回作",
+        description: "制作予定の3D空間素材",
+        price: "Coming Soon",
+        image: "",
+        imageAlt: "",
+        boothUrl: "#",
+        vrchatUrl: ""
+      },
+      {
+        title: "制作中",
+        description: "現在制作中のワールド・背景素材",
+        price: "Coming Soon",
+        image: "",
+        imageAlt: "",
+        boothUrl: "#",
+        vrchatUrl: ""
+      }
+    ];
+
+    const productGrid = document.getElementById("productGrid");
+
+    function createProductCard(product) {
+      const article = document.createElement("article");
+      article.className = "product-card";
+
+      const imageHtml = product.image
+        ? `<img class="product-image" src="${product.image}" alt="${product.imageAlt || product.title}">`
+        : `<div class="product-image" style="display:grid;place-items:center;color:var(--muted);font-weight:700;">Coming Soon</div>`;
+
+      const boothButton = product.boothUrl
+        ? `<a class="button primary" href="${product.boothUrl}" target="_blank" rel="noopener noreferrer">商品ページを見る</a>`
+        : "";
+
+      const vrchatButton = product.vrchatUrl
+        ? `<a class="button" href="${product.vrchatUrl}" target="_blank" rel="noopener noreferrer">VRChatで見る</a>`
+        : "";
+
+      article.innerHTML = `
+        ${imageHtml}
+        <div class="product-body">
+          <h3 class="product-title">${product.title}</h3>
+          <p class="product-desc">${product.description}</p>
+          <p class="price">価格：${product.price}</p>
+          <div class="card-buttons">
+            ${boothButton}
+            ${vrchatButton}
+          </div>
+        </div>
+      `;
+
+      return article;
+    }
+
+    products.forEach(product => {
+      productGrid.appendChild(createProductCard(product));
+    });
+  </script>
 </body>
 </html>
