@@ -184,43 +184,9 @@
     <div class="container">© akhiLow</div>
   </footer>
 
-  <script>
-    // ここに商品を追加するだけで、自動でカードが増えます。
-    const products = [
-      {
-        title: "教室パック",
-        description: "学校・教室向けの3D空間素材",
-        image: "images/classroom.jpg",
-        imageAlt: "教室パックのスクリーンショット",
-        boothUrl: "#",
-        vrchatUrl: ""
-      },
-      {
-        title: "夜更けの喫茶店 - Cozy Cafe -",
-        description: "夜の喫茶店ワールド素材",
-        image: "images/cozy-cafe.jpg",
-        imageAlt: "Cozy Cafeのスクリーンショット",
-        boothUrl: "https://akhilow.booth.pm/items/7587358",
-        vrchatUrl: "https://vrch.at/zqar9sdk"
-      },
-      {
-        title: "次回作",
-        description: "制作予定の3D空間素材",
-        image: "",
-        imageAlt: "",
-        boothUrl: "#",
-        vrchatUrl: ""
-      },
-      {
-        title: "制作中",
-        description: "現在制作中のワールド・背景素材",
-        image: "",
-        imageAlt: "",
-        boothUrl: "#",
-        vrchatUrl: ""
-      }
-    ];
+  <script src="products.js"></script>
 
+  <script>
     const productGrid = document.getElementById("productGrid");
 
     function createProductCard(product) {
@@ -244,7 +210,6 @@
         <div class="product-body">
           <h3 class="product-title">${product.title}</h3>
           <p class="product-desc">${product.description}</p>
-          
           <div class="card-buttons">
             ${boothButton}
             ${vrchatButton}
