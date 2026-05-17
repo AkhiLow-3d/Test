@@ -131,12 +131,6 @@
       color: var(--muted);
     }
 
-    .price {
-      margin: 0 0 18px;
-      font-weight: 800;
-      color: var(--accent);
-    }
-
     .about {
       margin-top: 48px;
       padding: 28px;
@@ -196,7 +190,6 @@
       {
         title: "教室パック",
         description: "学校・教室向けの3D空間素材",
-        price: "〇〇円",
         image: "images/classroom.jpg",
         imageAlt: "教室パックのスクリーンショット",
         boothUrl: "#",
@@ -205,7 +198,6 @@
       {
         title: "夜更けの喫茶店 - Cozy Cafe -",
         description: "夜の喫茶店ワールド素材",
-        price: "〇〇円",
         image: "images/cozy-cafe.jpg",
         imageAlt: "Cozy Cafeのスクリーンショット",
         boothUrl: "https://akhilow.booth.pm/items/7587358",
@@ -214,7 +206,6 @@
       {
         title: "次回作",
         description: "制作予定の3D空間素材",
-        price: "Coming Soon",
         image: "",
         imageAlt: "",
         boothUrl: "#",
@@ -223,7 +214,6 @@
       {
         title: "制作中",
         description: "現在制作中のワールド・背景素材",
-        price: "Coming Soon",
         image: "",
         imageAlt: "",
         boothUrl: "#",
@@ -254,7 +244,7 @@
         <div class="product-body">
           <h3 class="product-title">${product.title}</h3>
           <p class="product-desc">${product.description}</p>
-          <p class="price">価格：${product.price}</p>
+          
           <div class="card-buttons">
             ${boothButton}
             ${vrchatButton}
